@@ -7,14 +7,15 @@ import Header from "@components/Header";
 interface Props {
   children: React.ReactNode;
   lang: string;
+  contact?: boolean;
 }
 
-const Wrapper: React.FC<Props> = ({ children, lang }) => {
+const Wrapper: React.FC<Props> = ({ children, lang, contact = false }) => {
   return (
     <div>
       <Header lang={lang} />
       <div className="">{children}</div>
-      <Contact />
+      {!contact && <Contact />}
       <Footer lang={lang} />
     </div>
   );
