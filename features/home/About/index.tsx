@@ -40,12 +40,16 @@ const About = () => {
         >
           {swiperText.map((text, index) => (
             <SwiperSlide key={index}>
-              <div className="h-96 flex flex-col items-center justify-center gap-4 text-center p-6 text-[#E3C692]">
-                <p className="font-bold text-[30px] uppercase">{text.title}</p>
-                <p className="font-extralight text-[40px] uppercase">
+              <div className="flex min-h-96 flex-col items-center justify-center gap-4 px-4 py-8 text-center text-[#E3C692] md:h-96 md:p-6">
+                <p className="w-full max-w-3xl text-2xl font-bold uppercase wrap-break-word md:text-[30px]">
+                  {text.title}
+                </p>
+                <p className="w-full max-w-4xl text-3xl font-extralight uppercase leading-tight break-words md:text-[40px]">
                   {text.description}
                 </p>
-                <p className="">{text.paragraph}</p>
+                <p className="max-w-3xl text-sm leading-6 text-white md:text-base">
+                  {text.paragraph}
+                </p>
               </div>
             </SwiperSlide>
           ))}

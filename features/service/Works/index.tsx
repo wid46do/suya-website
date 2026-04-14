@@ -36,9 +36,9 @@ const Works = () => {
             className="bg-white shadow-md relative overflow-hidden"
           >
             <Image src={item.url} alt={item.name} className="w-full h-auto" />
-            <h2 className="font-bold text-[12px] md:text-lg mt-2 absolute bottom-3 text-center w-full text-white z-1">
+            {/* <h2 className="font-bold text-[12px] md:text-lg mt-2 absolute bottom-3 text-center w-full text-white z-1">
               {item.name}
-            </h2>
+            </h2> */}
             <div className="absolute inset-0 bg-linear-to-t from-[#00002F]/28 via-[#00002F]/10 to-transparent sm:from-[#00002F]/36 sm:via-[#00002F]/14 md:from-[#00002F]/45 md:via-[#00002F]/18" />
           </div>
         ))}
