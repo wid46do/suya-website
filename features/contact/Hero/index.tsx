@@ -20,7 +20,7 @@ const Hero: React.FC<Props> = ({ dict }) => {
             {...fadeInBottom()}
             className="flex flex-col gap-7 md:gap-10 text-white text-center max-w-3xl"
           >
-            <h1 className="uppercase text-[#E3C692] font-extralight text-6xl">
+            <h1 className="uppercase text-[#E3C692] font-extralight text-2xl md:text-5xl">
               Contact Us
             </h1>
           </motion.div>

@@ -12,18 +12,22 @@ const credentials = [
   {
     icon: <FaPhoneAlt />,
     text: "+62 821 2112 1337",
+    href: "https://wa.me/6282121121337",
   },
   {
     icon: <MdMail />,
     text: "marketing@suya-id.com",
+    href: "mailto:marketing@suya-id.com",
   },
   {
     icon: <FaGlobe />,
     text: "www.suya-id.com",
+    href: "https://www.suya-id.com",
   },
   {
     icon: <BsInstagram />,
     text: "suyaofficial.id",
+    href: "https://www.instagram.com/suyaofficial.id/",
   },
 ];
 
@@ -57,8 +61,6 @@ interface Props {
 const Footer = ({ lang }: Props) => {
   const pathName = usePathname();
   const locale = pathName?.split("/")[1] || lang;
-
-  const segments = pathName.split("/");
   return (
     <>
       <Responsive parentClassName="bg-[#222133]">
@@ -81,13 +83,16 @@ const Footer = ({ lang }: Props) => {
             <p className="text-[#E3C692] uppercase">PT Kayan Jaya Tanjung</p>
             <div className="flex flex-col gap-3">
               {credentials.map((item, index) => (
-                <div
+                <a
                   key={index}
+                  href={item.href}
+                  target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+                  rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
                   className="flex items-center gap-3 text-[#E3C692]"
                 >
                   {item.icon}
                   <span className="text-white">{item.text}</span>
-                </div>
+                </a>
               ))}
             </div>
           </div>

@@ -9,34 +9,45 @@ const credentials = [
   {
     icon: <FaPhoneAlt />,
     text: "+62 821 2112 1337",
+    href: "https://wa.me/6282121121337",
   },
   {
     icon: <MdMail />,
     text: "marketing@suya-id.com",
+    href: "mailto:marketing@suya-id.com",
   },
   {
     icon: <FaGlobe />,
     text: "www.suya-id.com",
+    href: "https://www.suya-id.com",
   },
   {
     icon: <BsInstagram />,
     text: "suyaofficial.id",
+    href: "https://www.instagram.com/suyaofficial.id/",
   },
 ];
 
 const ConnectUs = () => {
   return (
-    <Responsive className="items-center gap-9 flex flex-col">
-      <h1 className="font-extralight">Connect with Us.</h1>
-      <div className="flex gap-6">
+    <Responsive className="flex flex-col items-center gap-8 md:gap-10">
+      <h1 className="text-center text-2xl font-extralight sm:text-3xl md:text-4xl">
+        Connect with Us.
+      </h1>
+      <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
         {credentials.map((item, index) => (
-          <div
+          <a
             key={index}
-            className="flex items-center gap-3 text-[#E3C692] text-2xl"
+            href={item.href}
+            target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+            rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
+            className="flex min-h-20 items-center gap-3 rounded-2xl border border-[#E3C692]/30 px-4 py-4 text-xl text-[#E3C692] sm:text-2xl"
           >
             {item.icon}
-            <span className="text-black text-lg">{item.text}</span>
-          </div>
+            <span className="warp-break-words text-sm text-black sm:text-base md:text-lg">
+              {item.text}
+            </span>
+          </a>
         ))}
       </div>
     </Responsive>

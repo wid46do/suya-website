@@ -11,7 +11,9 @@ export interface TextFieldProps extends BasicInput {
   type?: "text" | "number";
   controller?: object;
   inputClassName?: string;
+  inputMode?: React.HTMLAttributes<HTMLInputElement>["inputMode"];
   maxLength?: number;
+  pattern?: string;
   prefix?: React.ReactNode;
   suffix?: React.ReactNode;
 }
@@ -30,16 +32,20 @@ const TextField: React.FC<TextFieldProps> = ({
   parentClassName,
   error,
   type,
+  inputMode,
   placeholder,
   maxLength,
+  pattern,
 }) => {
   const inputProps = {
     value,
     placeholder,
     type,
+    inputMode,
     disabled,
     autoFocus,
     maxLength,
+    pattern,
     id: label,
   };
 
