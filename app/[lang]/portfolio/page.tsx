@@ -3,9 +3,18 @@ import Wrapper from "@components/Wrapper";
 import Sections from "@features/portfolio/Sections";
 import useDictionary from "@functions/dictionary";
 
-const Portfolio: React.FC<Page> = async ({ params }) => {
+interface PortfolioPage extends Page {
+  searchParams: Promise<{
+    portfolio?: string | string[];
+  }>;
+}
+
+const Portfolio: React.FC<PortfolioPage> = async ({ params, searchParams }) => {
   const { lang } = await params;
+  const { portfolio } = await searchParams;
   const dict = await useDictionary(lang);
+  const targetPortfolioId = Array.isArray(portfolio) ? portfolio[0] : portfolio;
+
   return (
     <Wrapper lang={lang}>
       <Responsive className="justify-center flex ">
@@ -14,7 +23,7 @@ const Portfolio: React.FC<Page> = async ({ params }) => {
           <p>Explore our works here.</p>
         </div>
       </Responsive>
-      <Sections />
+      <Sections targetPortfolioId={targetPortfolioId} />
     </Wrapper>
   );
 };

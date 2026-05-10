@@ -1,26 +1,32 @@
 [
   {
     "name": "Project Taman Dayu",
-    "url": "/images/taman_dayu.png"
+    "url": "/images/taman_dayu.png",
+    "portfolioId": "paviliun-taman-dayu"
   },
   {
     "name": "Project W House",
-    "url": "/images/w-house.png"
+    "url": "/images/w-house.png",
+    "portfolioId": "w-house"
   },
   {
     "name": "Project Apart 36",
-    "url": "/images/apart_36.png"
+    "url": "/images/apart_36.png",
+    "portfolioId": "36asatu"
   },
   {
     "name": "Project JK House",
-    "url": "/images/jk-house.png"
+    "url": "/images/jk-house.png",
+    "portfolioId": "jk-house"
   },
   {
     "name": "Project ES House",
-    "url": "/images/es-house.png"
+    "url": "/images/es-house.png",
+    "portfolioId": "es-house"
   },
   {
     "name": "Project WH House",
-    "url": "/images/wh-house.png"
+    "url": "/images/wh-house.png",
+    "portfolioId": "wv-house"
   }
 ]

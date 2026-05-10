@@ -86,8 +86,12 @@ const Footer = ({ lang }: Props) => {
                 <a
                   key={index}
                   href={item.href}
-                  target={item.href.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                  target={
+                    item.href.startsWith("mailto:") ? undefined : "_blank"
+                  }
+                  rel={
+                    item.href.startsWith("mailto:") ? undefined : "noreferrer"
+                  }
                   className="flex items-center gap-3 text-[#E3C692]"
                 >
                   {item.icon}
@@ -97,7 +101,8 @@ const Footer = ({ lang }: Props) => {
             </div>
           </div>
           <div className="flex flex-col gap-7">
-            <p className="text-[#E3C692] uppercase">Quick Links</p>
+            {/* <p className="text-[#E3C692] uppercase">Quick Links</p> */}
+            <p className="text-[#E3C692] uppercase"></p>
             <div className="flex flex-col">
               {menus.map((menu, index) => {
                 const menuLink = menu.link.replace("/", "");
